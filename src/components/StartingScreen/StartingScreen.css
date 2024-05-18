@@ -1,0 +1,48 @@
+.starting-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20%;
+    height: 85vh;
+}
+  
+  .h1-startingscreen-dilven {
+    font-size: 80px;
+    color: #213458;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .h1-startingscreen {
+    font-size: 80px;
+    color: #4BB543;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .btn-salesmanager, .btn-cashier, .btn-admin {
+    background-color: #1D7D81;
+    color: white;
+    height: 70px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 25px;
+    width: 400px;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    opacity: 1;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-admin:hover, .btn-cashier:hover, .btn-salesmanager:hover {
+    opacity: 0.6;
+  }
+
+  .button-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }

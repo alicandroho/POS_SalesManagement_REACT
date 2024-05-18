@@ -1,0 +1,15 @@
+.navbar-custom {
+    background-color: #1D7D81;
+    overflow: hidden; 
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    color: #1D7D81;
+    display: block;
+  }
+  
+  .navbar-title {
+    margin-left: 10px;
+    list-style: none;
+  }

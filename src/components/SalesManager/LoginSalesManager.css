@@ -1,0 +1,42 @@
+.h1-login-sales {
+        font-size: 64px;
+        color: #213458;
+        font-weight: bold;
+        margin-bottom: 100px;
+}
+
+.btn-login-salesmanager {
+    background-color: #213458;
+    color: #DDDDDD;
+    height: 50px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    width: 300px;
+    position: relative;
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-register {
+    background-color: #213458;
+    color: #DDDDDD;
+    height: 50px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    width: 300px;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    font-size: large;
+    color: #1D7D81;
+    font-weight: bold;
+    margin-bottom: 100px;
+    margin-top: 10px;
+}

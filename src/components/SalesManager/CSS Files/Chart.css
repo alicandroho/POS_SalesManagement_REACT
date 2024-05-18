@@ -1,0 +1,4 @@
+/* Chart.css */
+.MuiXChart-root text:hover {
+  font-size: 16px !important; /* Set font size to 16px on hover */
+}

@@ -1,0 +1,44 @@
+.login-cashier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .centered-content {
+    text-align: center;
+    width: 500px;
+  }
+
+  .login-cashier {
+    font-size: 10;
+    color: #213458;
+    font-weight: bold;
+}
+  
+  .input-container {
+    margin: 10px 0;
+  }
+  
+  .btn-login-cashier {
+    background-color: #213458;
+    color: #DDDDDD;
+    height: 50px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    width: 300px;
+    position: relative;
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.forgot-password {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+  /* You can add more styles as needed */
+  

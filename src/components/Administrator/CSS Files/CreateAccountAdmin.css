@@ -1,0 +1,128 @@
+.createAccount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-size: 18px;
+   }
+
+   .createAccount form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   }
+
+   .createAccount form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 18px;
+   }
+
+   .createAccount form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+   }
+
+   .createAccount form button:hover {
+    background-color: #0056b3;
+   }
+
+   .register-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+    align-items: center;
+  }
+
+  
+  .h1-register {
+    font-size: 60px;
+    color: #213458;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 30px;
+  }
+  
+  .btn-signup {
+    background-color: #213458;
+    color: white;
+    height: 70px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 25px;
+    width: 400px;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+.center-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  margin-right: 800px;
+  margin-bottom: -445px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  margin-left: 600px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+}
+
+.side-nav {
+  display: flex;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.side-nav Button {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.side-nav:hover {
+  transition: .2s;
+  background-color: #f2f2f2;
+  text-decoration: none;
+}

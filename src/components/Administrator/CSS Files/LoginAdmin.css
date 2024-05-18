@@ -1,0 +1,50 @@
+.h1-login-sales {
+    font-size: 64px;
+    color: #213458;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+.btn-login-salesmanager {
+background-color: #4BB543;
+height: 50px;
+color: white;
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 20px;
+width: 500px;
+position: relative;
+border: none;
+margin-top: 30px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.btn-register {
+background-color: rgb(25, 118, 210);
+color: white;
+height: 50px;
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 20px;
+width: 500px;
+margin-top: 10px;
+border-radius: 5px;
+opacity: 1;
+border: none;
+cursor: pointer;
+}
+
+.btn-register:hover, .btn-login-salesmanager:hover { opacity: 0.8}
+
+.forgot-password {
+margin-bottom: 100px;
+margin-top: 10px;
+text-align: left;
+}
+
+.forgot-password-text {
+    font-size: small;
+    font-weight: lighter;
+    font-family: sans-serif;
+}

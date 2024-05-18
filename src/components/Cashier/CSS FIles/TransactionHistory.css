@@ -1,0 +1,64 @@
+.transaction-table-container {
+  overflow: auto; 
+  max-height: 650px; 
+  width: 1500px;
+  margin-bottom: 40px;
+}
+
+.transaction-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #070707;
+  padding: 8px;
+  text-align: center;
+  background-color: #fafafa88;
+}
+
+.transaction-table th:nth-child(1) {
+  width: 550px;
+  background-color: #1D7D814D;
+}
+
+.transaction-table th:nth-child(2) {
+  width: 625px;
+  background-color: #1D7D814D;
+}
+
+.transaction-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1D7D814D;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: auto;
+}
+
+.img_cashiering {
+  padding: auto;
+  margin: auto;
+}
+
+.drawer-account {
+  background-color: darkcyan;
+  height: 5.5vh;
+  margin-bottom: -8px;
+}
+
+.active-link {
+  background-color: #daede5;
+  color: #213458; /* Set the desired text color for active link */
+}
+
+.column-header {
+    background-color: #3a6e70 !important;
+    color: white;
+    font-weight: bold;
+  }

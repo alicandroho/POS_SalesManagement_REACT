@@ -1,0 +1,18 @@
+/* Add this to your CSS file */
+.profile-container {
+    text-align: center;
+  }
+  
+  .profile-picture img {
+    border-radius: 50%;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .profile-name {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  

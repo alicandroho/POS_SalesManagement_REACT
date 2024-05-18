@@ -1,0 +1,56 @@
+.refund-button, .return-button, .btn-cancel, .btn-approve {
+    padding: 15px 30px;
+    background-color: #213458;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-right: 1px;
+}
+
+.return-button {
+    background-color: #213458;
+    margin-left: 70px;
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+.btn-approve {
+    background-color: #4BB543;
+    color: white;
+    height: 50px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 15px;
+    width: 200px;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    font-size: 15px;
+    color: white;
+    height: 50px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    width: 200px;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.btn-cancel:hover, .refund-button:hover, .return-button:hover{
+    background-color: #c42232;
+  }
+
+.btn-approve:hover {
+    background-color: rgb(46, 167, 46);
+}
+
+.green-column-header {
+    background-color: #3a6e70 !important;
+    color: white;
+  }
