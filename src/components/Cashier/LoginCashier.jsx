@@ -39,7 +39,7 @@ const LoginCashier  = () => {
       });
     } else {
       // Send a POST request to the server
-      axios.post('https://pos-sales-springboot-database.onrender.com/user/logincash', {
+      axios.post('http://localhost:8080/user/logincash', {
         username: username,
         password: password,
         business_name: business_name,

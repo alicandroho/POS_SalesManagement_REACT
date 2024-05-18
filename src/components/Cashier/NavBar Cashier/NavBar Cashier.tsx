@@ -22,7 +22,7 @@ export default function NavbarCashier() {
     navigate('/logincashier');
   } else {
     setIsCashierLoggedIn(true);
-    axios.get('https://pos-sales-springboot-database.onrender.com/user/getAllUser')
+    axios.get('http://localhost:8080/user/getAllUser')
     .then((response) => {
       console.log('Hello, ', storedFirstName);
       console.log('Business Name:', storedBusinessName);

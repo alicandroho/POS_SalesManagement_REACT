@@ -86,14 +86,14 @@ const TransactionDetails = () => {
           window.alert('Please enter both your username and password');
         } else {
           // Send a POST request to the server
-          axios.post('https://pos-sales-springboot-database.onrender.com/user/loginsales', loginRequest)
+          axios.post('http://localhost:8080/user/loginsales', loginRequest)
             .then((response) => {
               if (response.status === 200) {
                 // Insert code for approval ^-^
                     const confirmed = window.confirm('Are you sure you want to refund?');
                     if (confirmed) {
                         setRefunded(true);
-                        axios.put(`https://pos-sales-springboot-database.onrender.com/transaction/isRefunded?transactionid=${id}`, { refunded: true })
+                        axios.put(`http://localhost:8080/transaction/isRefunded?transactionid=${id}`, { refunded: true })
                           .then((response) => {
                               window.confirm(`Transaction ${id} has been refunded.`);
                               console.log('Refund successful:', response.data);
@@ -127,14 +127,14 @@ const TransactionDetails = () => {
           window.alert('Please enter both your username and password');
         } else {
           // Send a POST request to the server
-          axios.post('https://pos-sales-springboot-database.onrender.com/user/loginsales', loginRequest)
+          axios.post('http://localhost:8080/user/loginsales', loginRequest)
             .then((response) => {
               if (response.status === 200) {
                 // Insert code for approval ^-^
                 const confirmed = window.confirm('Are you sure you want to return item?');
                 if (confirmed) {
                     setReturned(true);
-                    axios.put(`https://pos-sales-springboot-database.onrender.com/transaction/isReturned?transactionid=${id}`, { returned: true })
+                    axios.put(`http://localhost:8080/transaction/isReturned?transactionid=${id}`, { returned: true })
                       .then((response) => {
                           window.confirm(`Transaction ${id} has been returned.`);
                           console.log('Return successful:', response.data);

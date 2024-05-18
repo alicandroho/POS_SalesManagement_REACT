@@ -39,8 +39,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const initialSelectedProducts = [];
-const url = "https://pos-sales-springboot-database.onrender.com/product/getAllProduct";
-const post_transaction = "https://pos-sales-springboot-database.onrender.com/transaction/postTransaction";
+const url = "http://localhost:8080/product/getAllProduct";
+const post_transaction = "http://localhost:8080/transaction/postTransaction";
 
 export default function Cashiering() {
   const { isCashierLoggedIn, setIsCashierLoggedIn, cashierUser } = useAuth();
@@ -57,7 +57,7 @@ export default function Cashiering() {
     } else {
       setIsCashierLoggedIn(true);
       axios
-        .get("https://pos-sales-springboot-database.onrender.com/user/getAllUser")
+        .get("http://localhost:8080/user/getAllUser")
         .then((response) => {
           console.log("Hello, ", storedFirstName);
           console.log("Business Name:", storedBusinessName);
@@ -132,7 +132,7 @@ export default function Cashiering() {
     try {
       // Make an HTTP request to update the product quantity in the database
       await axios.put(
-        `https://pos-sales-springboot-database.onrender.com/product/decreaseQuantity/${productid}?quantityToDecrease=${quantityToDecrease}`
+        `http://localhost:8080/product/decreaseQuantity/${productid}?quantityToDecrease=${quantityToDecrease}`
       );
     } catch (error) {
       console.error(error);
@@ -143,7 +143,7 @@ export default function Cashiering() {
     try {
       // Make an HTTP request to increment the purchase count in the database for the specified product
       await axios.put(
-        `https://pos-sales-springboot-database.onrender.com/product/incrementPurchaseCount/${productid}?quantityPurchased=${quantityPurchased}`
+        `http://localhost:8080/product/incrementPurchaseCount/${productid}?quantityPurchased=${quantityPurchased}`
       );
     } catch (error) {
       console.error(error);

@@ -163,7 +163,7 @@ export default function SalesSummary() {
   // Fetch Transactions
   useEffect(() => {
     axios
-      .get("https://dilven-springboot.onrender.com/transaction/getAllTransaction", {
+      .get("https://pos-sales-springboot-database.onrender.com/transaction/getAllTransaction", {
         params: {
           business: localStorage.getItem("salesmanBusinessName")
         }

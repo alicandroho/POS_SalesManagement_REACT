@@ -44,7 +44,7 @@ const LoginSalesManager = () => {
         });
     } else {
       // Send a POST request to the server
-      axios.post('https://pos-sales-springboot-database.onrender.com/user/loginsales', loginRequest)
+      axios.post('http://localhost:8080/user/loginsales', loginRequest)
         .then((response) => {
           if (response.status === 200) {
             const token = response.data.token;
