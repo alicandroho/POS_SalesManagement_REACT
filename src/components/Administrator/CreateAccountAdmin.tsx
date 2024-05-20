@@ -22,11 +22,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   IconButton,
   InputAdornment,
   MenuItem,
@@ -37,7 +32,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { ManageAccounts, Menu, Visibility, VisibilityOff } from "@mui/icons-material";
+import { ManageAccounts, Visibility, VisibilityOff } from "@mui/icons-material";
 import ShieldIcon from "@mui/icons-material/Shield";
 import { ToastContainer, toast } from "react-toastify";
 import { previousDay } from "date-fns";
@@ -45,9 +40,6 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import MenuIcon from '@mui/icons-material/Menu';
-
 
 const drawerWidth: number = 300;
 
@@ -73,12 +65,8 @@ interface Account {
 const post_account = "https://pos-sales-springboot-database.onrender.com/user/postUser";
 const Account_Type = [
   {
-    value: "Cashier",
-    label: "Cashier",
-  },
-  {
-    value: "Sales Manager",
-    label: "Sales Manager",
+    value: "Administrator",
+    label: "Administrator",
   },
 ];
 
@@ -141,42 +129,13 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-export default function CreateAccountAdmin() {
+export default function CreateAccountUsers() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
-  const { isAdminLoggedIn, setIsAdminLoggedIn, adminUser } = useAuth();
-  const [accounts, setAccounts] = useState<Account[]>([]);
-  const [filteredAccounts, setFilteredAccounts] = useState<Account[]>([]);
-  const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
-
-  // Token
-  useEffect(() => {
-    const token = localStorage.getItem("adminLoggedIn");
-    if (!token) {
-      navigate("/loginadmin");
-    } else {
-      setIsAdminLoggedIn(true);
-      // Fetch user data from API
-      axios
-        .get("https://pos-sales-springboot-database.onrender.com/user/getAllUser")
-        .then((response) => {
-          // Filter users based on business_name
-          const filteredUsers = response.data.filter(
-            (username: Account) =>
-              username.business_name ===
-              localStorage.getItem("adminBusinessName")
-          );
-          setAccounts(filteredUsers);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  }, [isAdminLoggedIn, navigate, adminUser]);
 
   const themeDilven = createTheme({
     palette: {
@@ -185,23 +144,6 @@ export default function CreateAccountAdmin() {
       },
     },
   });
-
-  // Logout Function
-  const [openLogout, setOpenLogout] = React.useState(false);
-  const handleClickOpenLogout = () => {
-    setOpenLogout(true);
-  };
-  const handleClickCloseLogout = () => {
-    setOpenLogout(false);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
-    localStorage.removeItem("adminLoggedIn");
-    localStorage.removeItem("adminUsername");
-    localStorage.removeItem("adminBusinessName");
-    navigate("/loginadmin");
-  };
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -234,7 +176,8 @@ export default function CreateAccountAdmin() {
       contactnum.trim() !== "" &&
       address.trim() !== "" &&
       selectedGender.trim() !== "" &&
-      email.trim() !== ""
+      email.trim() !== "" &&
+      business_name.trim() !== ""
     );
   };
 
@@ -255,7 +198,7 @@ export default function CreateAccountAdmin() {
             email: email,
             fname: fname,
             lname: lname,
-            business_name: localStorage.getItem("adminBusinessName"),
+            business_name: business_name,
             address: address,
             contactnum: contactnum,
             gender: selectedGender,
@@ -339,24 +282,6 @@ export default function CreateAccountAdmin() {
             >
               Create an Account
             </Typography>
-
-            <Typography
-              component="h1"
-              variant="h4"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              <span
-                className="nav-user"
-                style={{ float: "right", marginRight: 10 }}
-              >
-                <IconButton color="inherit">
-                  <AccountCircleIcon sx={{ fontSize: 30 }} />
-                </IconButton>
-                {localStorage.getItem("adminUsername")}
-              </span>
-            </Typography>
           </Toolbar>
         </AppBar>
 
@@ -372,22 +297,15 @@ export default function CreateAccountAdmin() {
               px: [1],
             }}
           >
-            {localStorage.getItem("adminBusinessName")}
+            Dilven POS Sales
           </Toolbar>
           <Divider />
           <List component="nav">
             <Link to="/#" className="side-nav">
               <IconButton color="inherit">
-                <HomeIcon sx={{ fontSize: 20 }} />
+                <HomeIcon sx={{ fontSize: 15 }} />
               </IconButton>
               <Button>Home</Button>
-            </Link>
-
-            <Link to="/adminmainpage" className="side-nav">
-              <IconButton color="inherit">
-                <Menu sx={{ fontSize: 20 }} />
-              </IconButton>
-              <Button>Admin Main</Button>
             </Link>
 
             <Link
@@ -396,51 +314,10 @@ export default function CreateAccountAdmin() {
               className="side-nav"
             >
               <IconButton color="inherit">
-                <PersonAddIcon sx={{ fontSize: 20 }} />
+                <PersonAddIcon sx={{ fontSize: 15 }} />
               </IconButton>
               <Button>Create an Account</Button>
             </Link>
-
-            <Link to="/viewaccounts" className="side-nav">
-              <IconButton color="inherit">
-                <ManageAccounts sx={{ fontSize: 20 }} />
-              </IconButton>
-              <Button>View Accounts</Button>
-            </Link>
-
-            <Link onClick={handleClickOpenLogout} to="" className="side-nav">
-              <IconButton color="inherit">
-                <LogoutIcon sx={{ fontSize: 20 }} />
-              </IconButton>
-              <Button>Logout</Button>
-            </Link>
-
-            <Dialog open={openLogout} onClose={handleClickCloseLogout}>
-              <DialogTitle
-                sx={{ fontSize: "1.6rem", color: "red", fontWeight: "bold" }}
-              >
-                Warning!
-              </DialogTitle>
-              <DialogContent>
-                <DialogContentText sx={{ fontSize: "1.6rem" }}>
-                  Are you sure you want to logout?
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button
-                  sx={{ fontSize: "15px", fontWeight: "bold" }}
-                  onClick={handleClickCloseLogout}
-                >
-                  Cancel
-                </Button>
-                <Button
-                  sx={{ fontSize: "15px", fontWeight: "bold" }}
-                  onClick={handleLogout}
-                >
-                  Confirm
-                </Button>
-              </DialogActions>
-            </Dialog>
           </List>
         </Drawer>
 
@@ -671,6 +548,21 @@ export default function CreateAccountAdmin() {
                       marginTop: "-20px",
                     }}
                   >
+                    <TextField
+                      type="text"
+                      label="Business Name"
+                      variant="outlined"
+                      value={business_name}
+                      fullWidth
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        setBusiness_name(e.target.value)
+                      }
+                      inputProps={{ style: { fontSize: 16 } }}
+                      InputLabelProps={{
+                        style: { fontSize: 16 },
+                      }}
+                      style={{ marginRight: "10px" }}
+                    />
 
                     <TextField
                       type="text"
