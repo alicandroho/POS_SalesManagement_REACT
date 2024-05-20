@@ -22,7 +22,7 @@ export default function SalesSummary() {
   
 
   useEffect(() => {
-    axios.get('http://localhost:8080/transaction/getAllTransaction')
+    axios.get('https://pos-sales-springboot-database.onrender.com/transaction/getAllTransaction')
       .then((response) => {
         const allTransactions = response.data;
         setTransactions(allTransactions);
