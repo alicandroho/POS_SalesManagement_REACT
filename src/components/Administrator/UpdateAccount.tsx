@@ -99,7 +99,7 @@ export default function UpdateAccount(props: Account) {
 
       axios
         .put(
-          "https://dilven-springboot.onrender.com/user/putUser?userid=" +
+          "https://pos-sales-springboot-database.onrender.com/user/putUser?userid=" +
             props.userid,
           {
             username: usernameRef.current?.value,
