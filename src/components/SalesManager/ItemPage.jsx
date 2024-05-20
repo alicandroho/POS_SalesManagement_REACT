@@ -77,7 +77,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
     useEffect(() => {
       // Fetch product data from the API when the component mounts
-      axios.get('https://dilven-pos-sales-management-database-2.onrender.com/product/getAllProduct')
+      axios.get('https://pos-sales-springboot-database.onrender.com/product/getAllProduct')
         .then((response) => {
           // Set the product data in the state
           setProducts(response.data);
@@ -111,7 +111,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     
         // Send a request to update the product's quantity on the server
         axios
-          .put(`https://dilven-pos-sales-management-database-2.onrender.com/product/putQuantity?productid=${updatedProductData.productid}`, updatedProductData)
+          .put(`https://pos-sales-springboot-database.onrender.com/product/putQuantity?productid=${updatedProductData.productid}`, updatedProductData)
           .then((response) => {
             // Assuming the server returns a successful response
             console.log('Product quantity updated successfully.');
@@ -146,7 +146,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     
         // Make an API call to update the product on the server with the new name and price
         axios
-          .put(`https://dilven-pos-sales-management-database-2.onrender.com/product/putProduct?productid=${updatedProduct.productid}`, updatedProduct)
+          .put(`https://pos-sales-springboot-database.onrender.com/product/putProduct?productid=${updatedProduct.productid}`, updatedProduct)
           .then((response) => {
             // Assuming the server returns the updated product
             const updatedProductData = response.data;
