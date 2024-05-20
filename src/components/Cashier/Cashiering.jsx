@@ -39,8 +39,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const initialSelectedProducts = [];
-const url = "http://localhost:8080/product/getAllProduct";
-const post_transaction = "http://localhost:8080/transaction/postTransaction";
+const url = "https://pos-sales-springboot-database.onrender.com/product/getAllProduct";
+const post_transaction = "https://pos-sales-springboot-database.onrender.com/transaction/postTransaction";
 
 export default function Cashiering() {
   const { isCashierLoggedIn, setIsCashierLoggedIn, cashierUser } = useAuth();
@@ -57,7 +57,7 @@ export default function Cashiering() {
     } else {
       setIsCashierLoggedIn(true);
       axios
-        .get("http://localhost:8080/user/getAllUser")
+        .get("https://pos-sales-springboot-database.onrender.com/user/getAllUser")
         .then((response) => {
           console.log("Hello, ", storedFirstName);
           console.log("Business Name:", storedBusinessName);
