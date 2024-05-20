@@ -162,7 +162,7 @@ export default function CreateAccountAdmin() {
       setIsAdminLoggedIn(true);
       // Fetch user data from API
       axios
-        .get("https://dilven-springboot.onrender.com/user/getAllUser")
+        .get("https://pos-sales-springboot-database.onrender.com/user/getAllUser")
         .then((response) => {
           // Filter users based on business_name
           const filteredUsers = response.data.filter(
